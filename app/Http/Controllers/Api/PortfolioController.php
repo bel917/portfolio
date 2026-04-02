@@ -12,8 +12,13 @@ class PortfolioController extends Controller
 {
     public function index(): JsonResponse
     {
+        $profile = Profile::query()->first();
+
         return response()->json([
-            'profile' => Profile::query()->first(),
+            'profile' => $profile ? [
+                ...$profile->toArray(),
+                'resume_download_url' => url('/documents/Bali_Balija_CV.pdf'),
+            ] : null,
             'skills' => Skill::query()
                 ->orderBy('sort_order')
                 ->get(['id', 'name']),

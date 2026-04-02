@@ -105,8 +105,9 @@ img {
     justify-content: space-between;
     gap: 24px;
     margin-bottom: 56px;
-    padding: 12px 0;
-    background: color-mix(in srgb, var(--bg) 92%, transparent 8%);
+    padding: 12px 20px;
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--text) 8%, var(--bg) 91%);
     backdrop-filter: blur(8px);
 }
 
@@ -423,17 +424,29 @@ p {
 }
 
 .social-rail a {
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 0.82rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
+    color: var(--text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--text) 8%, var(--bg) 91%);
+    box-shadow: 0 10px 24px rgba(15, 18, 28, 0.08);
 }
 
 .social-rail a:hover {
-    color: var(--text);
+    color: var(--bg);
+    background: var(--text);
+    border-color: var(--text);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 18px 32px rgba(15, 18, 28, 0.18);
+}
+
+.social-rail a svg {
+    width: 22px;
+    height: 22px;
 }
 
 .social-rail-line {
@@ -581,10 +594,6 @@ p {
         flex-direction: row;
         justify-content: flex-start;
         min-height: auto;
-    }
-
-    .social-rail a {
-        writing-mode: initial;
     }
 
     .social-rail-line {

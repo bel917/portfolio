@@ -11,13 +11,17 @@ class PortfolioSeeder extends Seeder
 {
     public function run(): void
     {
-        Profile::query()->create([
-            'name' => 'Avery Stone',
+        Profile::query()->updateOrCreate([
+            'email' => 'avery@example.com',
+        ], [
+            'name' => 'Bali Balija',
             'title' => 'Full-Stack Developer',
             'location' => 'Berlin, Germany',
             'email' => 'avery@example.com',
             'image' => 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80',
-            'resume_link' => 'https://github.com/averystone',
+            'resume_link' => 'https://github.com/bel917',
+            'github_link' => 'https://github.com/bel917',
+            'linkedin_link' => 'https://www.linkedin.com/in/bali-balija/',
             'intro' => 'I build fast, polished web experiences with Laravel and React.',
             'bio' => 'I enjoy turning ideas into clear, practical products with thoughtful UI, strong backend fundamentals, and maintainable code. My focus is on building portfolio sites, dashboards, and small business tools that feel modern without getting complicated.',
         ]);

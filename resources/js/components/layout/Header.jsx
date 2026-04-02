@@ -7,7 +7,7 @@ export function Header({ name, theme, onToggleTheme }) {
         <header className="site-header">
             <a className="brand" href="#home">
                 <span>{name}</span>
-                <small>Digital Creator</small>
+                <small>Software Developer</small>
             </a>
 
             <nav className="site-nav" aria-label="Primary">

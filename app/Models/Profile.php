@@ -16,6 +16,8 @@ class Profile extends Model
         'email',
         'image',
         'resume_link',
+        'github_link',
+        'linkedin_link',
         'bio',
         'intro',
     ];
